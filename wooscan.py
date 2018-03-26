@@ -233,7 +233,10 @@ for line in domain:
         for line in xx:
             reppp=line.replace('<code>','')
             repppp=reppp.replace('</code>','')
-            guolv=repppp.split()[0]
+            try:
+                guolv=repppp.split()[0]
+            except:
+                continue
             guolv1=guolv.replace('\'','')
             guolv2=guolv1.replace('<br/>','')
             guolv3=guolv2.replace('</br>','')
