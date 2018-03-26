@@ -12,7 +12,7 @@ import shutil
 from bs4 import BeautifulSoup
 import stat
 
-#颜色及符号部分
+#颜色及符号
 green='\033[1;32;40m'
 red='\033[1;31;40m'
 blue='\033[1;34;40m'
@@ -26,7 +26,7 @@ star='*'*50
 print cyan+star
 print '欢迎使用wooscan\n作者:tail\nqq:1652429283\n如果脚本出现错误，请提交给我，感谢！\n查看帮助请使用-h选项\n'+star+nor
 
-#参数部分
+#参数
 opts,args=getopt.getopt(sys.argv[1:],"hdf:t:",['help','delay=','path='])
 for opt,value in opts:
     if opt=='-h':
@@ -44,7 +44,7 @@ for opt,value in opts:
         print nor
         sys.exit()
 
-#检测wooyunoutput文件夹部分       
+#检测wooyunoutput文件夹     
 path=os.getcwd()
 folder=os.path.exists('wooyunoutput')
 for op,value in opts:
@@ -229,11 +229,8 @@ for line in domain:
             sys.exit()
         code=BeautifulSoup(html2.text,'html.parser')
         mdaaa=re.compile(r'<code>.*?</code>')
-#        mdaaa=code.code
         xx=mdaaa.findall(str(code))
-#        print xx
         for line in xx:
-# print line   #检测代码是否错误
             reppp=line.replace('<code>','')
             repppp=reppp.replace('</code>','')
             guolv=repppp.split()[0]
@@ -247,7 +244,6 @@ for line in domain:
             start1=repppp.startswith('http://') 
             start2=repppp.startswith('GET')
             start3=repppp.startswith('POST')
-#        print resulta   #检测此部分代码是否存在错误
             if (start1==True):
                 print cyan+'[+]发现一个url注入点,已写入u.txt'+nor
                 o1.write(guolv4+'\n')
@@ -277,7 +273,6 @@ ask=raw_input('结果已写入wooyunoutput目录\n\n是否调用sqlmap对结果�
 print nor
 
 if ask=='Y' or ask=='y' or ask=='':   
-#需要在前面加一个统计并输出漏洞数的代码
     print cyan+'因为测试时间问题，脚本未添加自动整理sqlmap结果功能，想查看结果可以等sqlmap运行结束后，在日志表格中查看结果\n\nwindows默认位于c:/users/你的用户名/.sqlmap/outout/\nlinux默认位于/root/.sqlmap/output/\n按时间排序后最新的表格文件即为注入结果\n\n一秒后开始运行sqlmap'+nor
     time.sleep(1)
     utest=os.system(sqlmappath+' -m u.txt --batch --random-agent')
