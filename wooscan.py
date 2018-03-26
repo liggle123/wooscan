@@ -39,7 +39,7 @@ for opt,value in opts:
         print '-d                      对你提供的域名文件进行根域提取处理并自动继续寻找注入点，可以配合-f参数'
         print '--path  sqlmap路径      指定sqlmap路径，例如/root/sqlmap/sqlmap.py'
         print '例子:\npython wooscan.py -f urltest.txt      对urltest.txt文件内的域名进行测试'
-        print 'python wooscan.py -f urltest.txt  对urltest.txt内域名进行提取根域名处理，然后再开始册书'
+        print 'python wooscan.py -d -f urltest.txt  对urltest.txt内域名进行提取根域名处理，然后再开始测试'
         print star
         print nor
         sys.exit()
