@@ -25,7 +25,5 @@ python wooscan.py -d -f urltest.txt  对urltest.txt内域名进行提取根域�
 
 ![image](https://github.com/9tail123/wooscan/blob/master/image/-3c6bfdfcf1dba7f.jpg)
 ![image](https://github.com/9tail123/wooscan/blob/master/image/Screenshot_2018-03-26-17-56-59-994_com.sonelli.juicessh.png)
-
-
-
+欢迎加我交流(☆_☆)
 ![☆dubaibai☆](https://github.com/9tail123/wooscan/blob/master/image/50f88e5a4d3c6e84.jpg)
