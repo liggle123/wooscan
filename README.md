@@ -18,3 +18,7 @@ python3暂时懒得改=_=
 例子:
 python wooscan.py -f urltest.txt      对urltest.txt文件内的域名进行测试
 python wooscan.py -d -f urltest.txt  对urltest.txt内域名进行提取根域名处理，然后再开始测试
+
+演示效果图：
+![image](https://github.com/9tail123/wooscan/blob/master/image/-3c6bfdfcf1dba7f.jpg)
+![image](https://github.com/9tail123/wooscan/blob/master/image/Screenshot_2018-03-26-17-56-59-994_com.sonelli.juicessh.png)
