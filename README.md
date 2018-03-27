@@ -8,12 +8,13 @@
 然后运行python wooscan.py即可
 测试环境是kali+python2
 python3暂时懒得改=_=
+windows环境如果乱码可以在记事本中将脚本另存为ANSI格式再运行
 如果没有安装requests库需要先pip install requests,没有pip的话先运行apt-get install python-pip
 
 -h,--help               显示帮助信息并退出
 -f  文件名.txt          域名文件
 --delay 秒数            延长爬行时间，默认三秒
--t  秒数                设定爬行超时时间，默认二十秒
+-t  秒数                设定爬行超时时间，默认三十秒
 -d                      对你提供的域名文件进行根域提取 处理并自动继续寻找注入点，可以配合-f参数
 --path  sqlmap路径      指定sqlmap路径，例如/root/sqlmap/sqlmap.py
 例子:
