@@ -34,8 +34,8 @@ for opt,value in opts:
         print star
         print '-h,--help               显示帮助信息并退出'
         print '-f  文件名.txt          域名文件'
-        print '--delay 秒数            延长爬行时间，默认三秒'
-        print '-t  秒数                设定爬行超时时间，默认二十秒'
+        print '--delay 秒数            延长爬行时间，默认间隔三秒'
+        print '-t  秒数                设定爬行超时时间，默认三十秒'
         print '-d                      对你提供的域名文件进行根域提取处理并自动继续寻找注入点，可以配合-f参数'
         print '--path  sqlmap路径      指定sqlmap路径，例如/root/sqlmap/sqlmap.py'
         print '例子:\npython wooscan.py -f urltest.txt      对urltest.txt文件内的域名进行测试'
@@ -70,7 +70,7 @@ os.chdir(path+'/wooyunoutput')
 #各参数初始值
 fname='url.txt'
 delay=3    #延时秒数
-sec=20     #超时秒数
+sec=30     #超时秒数
 
 
 def exists():
@@ -193,11 +193,11 @@ except requests.exceptions.ConnectionError:
     sys.exit()
 except requests.exceptions.ConnectTimeout:
     print red+frame+'[!]发生错误,与漏洞库建立连接超过'+sec+'秒，原因可能是网络出现问题或频繁的请求被拦截\n如果确认网络无问题请等候片刻再重新运行脚本\n\n使用--delay参数可以设置延时秒数(默认延时三秒)\n使用-t可以设置超时时间（默认二十秒后超时）\n更多帮助请使用-h或--help查看\n'+frame+nor
-    y=raw_input('是否再次请求并设定超时时间为30秒?(Y/N)\n请输入(回车将自动选择Y)')
+    y=raw_input('是否再次请求并设定超时时间为40秒?(Y/N)\n请输入(回车将自动选择Y)')
     if y=='Y' or y=='y' or y=='':
-        print '[*]脚本将等待30秒响应'
+        print '[*]脚本将等待40秒响应'
         try:
-            wait=requests.get(url,headers=headers,timeout=int(sec))
+            wait=requests.get(url,headers=headers,timeout=40)
         except:
             print '[!]网站过长时间无响应，请查看脚本帮助信息增加请求延时或自行修改源码中镜像库地址'
             sys.exit()
