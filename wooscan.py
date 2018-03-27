@@ -212,8 +212,8 @@ for line in domain:
     url='http://wooyun.chamd5.org/searchbug.php?q=%E5%BF%BD%E7%95%A5&q=SQL%E6%B3%A8%E5%B0%84%E6%BC%8F%E6%B4%9E&q='+line.strip()
     try:
         html=requests.get(url,headers=headers,timeout=int(sec))
-    except requests.exceptions.ConnectionError:
-        print '超时'
+    except:
+        print '异常'
         continue
     soup=BeautifulSoup(html.text,'html.parser')
     mm=re.compile(r'bug_detail.php.*?">')
